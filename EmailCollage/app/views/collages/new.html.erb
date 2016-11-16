@@ -1,0 +1,7 @@
+<form action="/collages" method="GET">
+	<%= simple_form_for @collages :collages => 'collages#create' do |f| %>
+  		<%= f.input :group %>
+  		<%= f.action :fetch %>
+	<% end %>
+	
+</form>
