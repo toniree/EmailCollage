@@ -1,5 +1,6 @@
 # EmailCollage
 Ruby on Rails Decal Final Group Project
+
 Group Members: Toni Lee, Chris Hinrichs, Vincent Bartle
 
 # Idea
