@@ -1,0 +1,5 @@
+<h1> <%= @collage_word.word %> </h1>
+
+<%= @collage_word.comments.each do |comment| %>
+    <p> <%= comment.text %> </p>
+

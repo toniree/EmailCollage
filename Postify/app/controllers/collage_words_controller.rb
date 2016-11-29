@@ -1,6 +1,12 @@
 class CollageWordsController < ApplicationController
+    before_action :authenticate_user!
+
     def index
         @collage_words = CollageWord.all
+    end
+
+    def show
+        @collage_word = CollageWord.find(params[:id])
     end
 
     def create
