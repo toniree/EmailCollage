@@ -6,6 +6,7 @@ class CollageWordsController < ApplicationController
 
     def show
         @collage_word = CollageWord.find(params[:id])
+        @comments = Comment.where(collage_word_id: @collage_word).order("created_at DESC");
     end
 
     def create
