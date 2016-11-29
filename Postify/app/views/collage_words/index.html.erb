@@ -1,5 +1,18 @@
 <h1> Collage </h1>
 
-<% @collage_words.each do |collage_word| %>
-    <p> <%= collage_word.word %> </p>
-<% end %> 
+<% if current_user %>
+    <p> <%= current_user.email %> </p>
+    <p> <%= link_to "Logout", destroy_user_session_path, :class => "button medium", :method => :delete %> </p>
+    <p> <%= link_to "New Collage Word", new_collage_word_path, :class => "button medium", :method => :get%> </p>
+<% else %>
+    <p> <%= link_to "Login", new_user_session_path, :class => "button medium:", :method => :get %> </p>
+    <p> <%= link_to "Sign Up", new_user_registration_path, :class => "button medium:", :method => :get %> </p>
+<% end %>
+
+<% @collage_words.each do |f| %>
+    <% if !current_user || f.user.email.split('@')[1] === current_user.email.split('@')[1] %>
+        <p> <%= f.user.email %>, <%= f.word %> </p>
+        <%= link_to "See comments", show_path(id: f), :class => "button medium", :method => :post %>
+    <% end %>
+<% end %>
+
