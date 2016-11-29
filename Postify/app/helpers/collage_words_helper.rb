@@ -1,0 +1,2 @@
+module CollageWordsHelper
+end

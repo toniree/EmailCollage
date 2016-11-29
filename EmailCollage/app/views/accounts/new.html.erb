@@ -1,8 +1,0 @@
-<form action="/accounts" method="POST">
-	<%= simple_form_for @accounts :accounts => 'accounts#create' do |f| %>
-  		<%= f.input :account %>
-  		<%= f.action :create %>
-  		<%= f.input :group %>
-	<% end %>
-	
-</form>
