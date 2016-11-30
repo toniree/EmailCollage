@@ -53,6 +53,8 @@ gem 'simple_form'
 
 gem 'bootstrap-sass'
 
+gem 'seed_dump'
+
 # gem 'bootstrap-sass'
 
 
