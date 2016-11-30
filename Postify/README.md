@@ -1,17 +1,23 @@
 # Postify
 Postify groups users together by email provider, and let's them see a collage of posts from fellow group members, on which they are able to comment on. Desinged and built on Ruby on Rails with Bootstrap by Chris Hinrichs, Toni Lee, and Vincent Bartle for UC Berkeley's Ruby on Rails Decal Fall 2016.
 
+
 Team Members: Toni Lee, Chris Hinrichs, Vincent Bartle
+
 Demo Link:
+
 
 Idea: Postify groups users together by email provider, and let's them see a collage of posts from fellow group members, on which they are able to comment on.
 
+
 # Models and Description:
+
 User: Users, has many collage_words, has_many comments.
 
 Collage_Word: A post, belongs to a user, has_many comments.
 
 Comment: A comment, belongs to a user, and a collage_word
+
 
 # Features
 * User signup with devise, grouping user by email provider
@@ -19,8 +25,10 @@ Comment: A comment, belongs to a user, and a collage_word
 * User can comment on group member's posts
 * Posts are depicted as timeline
 
+
 # Features
 * Sat together and grinded it out bootcamp style
+
 
 # Demo Instructions:
 * Clone/Pull
