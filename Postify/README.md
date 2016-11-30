@@ -26,7 +26,7 @@ Comment: A comment, belongs to a user, and a collage_word
 * Posts are depicted as timeline
 
 
-# Features
+# Division of Labor
 * Sat together and grinded it out bootcamp style
 
 
