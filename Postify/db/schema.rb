@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161129101720) do
+ActiveRecord::Schema.define(version: 20161129222324) do
 
   create_table "collage_words", force: :cascade do |t|
     t.string   "word"
@@ -21,11 +21,11 @@ ActiveRecord::Schema.define(version: 20161129101720) do
   end
 
   create_table "comments", force: :cascade do |t|
+    t.text     "content"
     t.integer  "collage_word_id"
+    t.integer  "user_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.string   "text"
-    t.integer  "user_id"
     t.index ["collage_word_id"], name: "index_comments_on_collage_word_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end

@@ -1,14 +1,21 @@
 class CommentsController < ApplicationController
-    def create
-        @comment = Comments.new collage_word_params   
-    end
+    before_action :find_collage_word
 
-    def new
-        @collage_word = Comments.new
+    def create
+        @comment = @collage_word.comments.create(params[:comment].permit(:content))
+        @comment.user = current_user
+        @comment.save
+
+        if @comment.save
+            redirect_to collage_word_path(@collage_word)
+        else
+            render 'new'
+        end
     end
 
     private
-    def collage_word_params
-        params.require(:comment).permit(:text, :collage_word_id, :user_id)
+
+    def find_collage_word
+        @collage_word = CollageWord.find(params[:collage_word_id])
     end
 end

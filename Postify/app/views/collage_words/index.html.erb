@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Postify</a>
+                <a class="navbar-brand" href="index.html"><font color="#0000A0">Postify</font></a>
             </div>
             <!-- /.navbar-header -->
             <!-- /.navbar-top-links -->
@@ -47,6 +47,7 @@
             <!-- /.navbar-static-side -->
         </nav>
 </section>
+
 <section id="page-wrapper">
     		<div class="row">
     			<div class="col-lg-8">
@@ -58,85 +59,40 @@
 
                 	<div class="panel-body">
                             <ul class="timeline">
-                                <li>
-                                    <div class="timeline-badge"><i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4 class="timeline-title">
-                                            	<p> MAKE SURE EACH COLLAGE WORD IS A SEPARATE BUBBLE</p>
-                                            <% @collage_words.each do |f| %>
-    											<% if !current_user || f.user.email.split('@')[1] === current_user.email.split('@')[1] %>
-        											<p> <%= f.user.email %>, <%= f.word %> </p>
-        											<%= link_to "See comments", show_path(id: f), :class => "button medium", :method => :post %>
-    											<% end %>
-											<% end %>
-											</h4>                                            
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p>Gotta put how many comments here</p>
-                                            <hr>
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
-                                                    <i class="fa fa-gear"> WRITE COMMENT! </i> <span class="caret"></span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="timeline-inverted">
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4 class="timeline-title">None</h4>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p>Gotta put how many comments here</p>
-                                            <hr>
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
-                                                    <i class="fa fa-gear"> WRITE COMMENT! </i> <span class="caret"></span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="timeline-badge"><i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4 class="timeline-title">
-                                            	<p> MAKE SURE EACH COLLAGE WORD IS A SEPARATE BUBBLE</p>
+                                <% var = 0 %>
+                                <% @collage_words.each do |f| %>
+    								<% if !current_user || f.user.email.split('@')[1] === current_user.email.split('@')[1] %>
+    								<% if var % 2 == 0 %>
+    									<li>
+                                    		<div class="timeline-badge"><i class="fa fa-check"></i>
+                                    		</div>
+                                    		<div class="timeline-panel">
+                                        		<div class="timeline-heading">
+                                            		<h4 class="timeline-title">
+                                            			<p> <font color="#ADD8E6"><%= f.user.email %> </font> says, <strong> "<%= f.word %>"</strong> </p>
                                             
-											</h4>                                            
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p>Gotta put how many comments here</p>
-                                            <hr>
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
-                                                    <i class="fa fa-gear"> WRITE COMMENT! </i> <span class="caret"></span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="timeline-inverted">
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4 class="timeline-title">None</h4>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p>Gotta put how many comments here</p>
-                                            <hr>
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
-                                                    <i class="fa fa-gear"> WRITE COMMENT! </i> <span class="caret"></span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
+													</h4>                                            
+                                        		</div>
+                                        		<div class="timeline-body">                                     
+                                            		<%= link_to "See comments", show_path(id: f), :class => "button medium", :method => :post %>
+                                        		</div>
+                                    		</div>
+                                		</li>
+                                	<% else %>
+        								<li class="timeline-inverted">
+                                    		<div class="timeline-panel">
+                                        		<div class="timeline-heading">
+                                            		<h4 class="timeline-title"><p> <font color="#ADD8E6"> <%= f.user.email %> </font> says, <strong> "<%= f.word %>"</strong> </p></h4>
+                                        		</div>
+                                        		<div class="timeline-body">
+                                            		<%= link_to "See comments", show_path(id: f), :class => "button medium", :method => :post %>
+                                        		</div>
+                                    		</div>
+                                		</li>
+    								<% end %>
+									<% end %>
+									<% var = var + 1 %>
+								<% end %>
                                 
                             </ul>
                         </div>
@@ -146,5 +102,6 @@
                 </div>
 
     		</div>
-    </section>
+</section>
+
 

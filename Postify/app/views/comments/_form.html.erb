@@ -1,0 +1,4 @@
+<%= form_for([@collage_word, @collage_word.comments.build]) do |f| %>
+    <%= f.text_area :content %>
+    <%= f.submit %>
+<% end %>
