@@ -1,24 +1,16 @@
-# README
+# Postify
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Postify groups users together by email provider, and let's them see a collage of posts from fellow group members, on which they are able to comment on.
 
-Things you may want to cover:
+Desinged and built on Ruby on Rails with Bootstrap by Chris Hinrichs, Toni Lee, and Vincent Bartle for UC Berkeley's Ruby on Rails Decal Fall 2016.
 
-* Ruby version
+# Demo Instructions:
 
-* System dependencies
+* Clone/Pull
 
-* Configuration
+* bundle install
 
-* Database creation
+* rake db:seed
 
-* Database initialization
+* rails server
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
